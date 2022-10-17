@@ -191,14 +191,12 @@ void test_shrink_to_fit_remove()
     {
         a.append(i);
     }
-    a.print();
     assert(a.capacity() == 16);
     
     for (int i = 0; i < 7; i++)
     {
         a.remove(i);
     }
-    a.print();
     assert(a.capacity() == 4);
     std::cout << "- Success\n";    
 }
@@ -227,7 +225,7 @@ void test_shrink_to_fit_pop()
 int main()
 {
     
-    /* test_empty_array_has_length_zero();
+    test_empty_array_has_length_zero();
     test_array_with_two_elements_appended_has_length_two();
     test_print();
     test_vector_constructor();
@@ -236,7 +234,7 @@ int main()
     test_remove();
     test_pop_at_index();
     test_pop();
-    test_capacity(); */
+    test_capacity();
     test_shrink_to_fit_remove();
     test_shrink_to_fit_pop();
 }
