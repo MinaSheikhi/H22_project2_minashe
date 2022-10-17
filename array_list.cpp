@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <vector>
+#include <cmath>
 
 class ArrayList
 {
@@ -31,6 +32,34 @@ class ArrayList
         _data = new_data;
     }
 
+    /***
+     * @brief replace underlying storage array with smallest
+     * capacity 2^n. 
+     * Copy all elements of original array over to the new 
+     * arrat and delete old array.
+    */
+
+    void shrink_to_fit()
+    {
+        for (int n = 0; pow(2,n) < _size; n++)
+        {
+            _capacity = pow(2, n+1);
+
+        }
+
+        int *new_data = new int[_capacity];
+
+        for (int i = 0; i < _size; i++)
+        {
+             new_data[i] = _data[i];           
+        }
+
+        //delete only deletes 1 object. to delete all of the objects in array add delete[]
+        delete[] _data;
+        _data = new_data; 
+    }
+
+
   public:
     // Default constructor
     ArrayList()
@@ -59,6 +88,12 @@ class ArrayList
     int length()
     {
         return _size;
+    }
+
+    //capacity of array
+    int capacity()
+    {
+        return _capacity;
     }
 
     /**
@@ -150,42 +185,65 @@ class ArrayList
     /**
      * @brief deletes the element from the list.
      * 
-     * @param elem the element
+     * @param index the index
      *  
     */
-    void remove(int elem)
+    void remove(int index)
     {        
-        for (int i = 0; i < _size; i++){
-            if (_data[i] == elem)
-            {
-                for (int j = i; j < _size - 1; j++)
-                {
-                    _data[j] = _data[j+1]; 
-                } 
-                _size--;               
-            }
-            
+        for (int i = 0; i < _size - 1; i++)
+        {
+           _data[i] = _data[i + 1];
         }
-        
+        _size--;
+
+         //shrinking the array to fit if less than 25% of allocated capacity is used
+        if ( _size <  0.25*_capacity) 
+        {
+            shrink_to_fit();
+        }
     }
 
     /***
      * @brief removing element at index given
+     * 
      * @param index
-     * @return the element of index given
+     * @return int the value at that index
     */
 
     int pop(int index){
         
-        for (int i = index; i < _size; i++){
-            
+        int old_value = _data[index];
+
+        for (int i = index; i < _size - 1; i++){
+            _data[i] = _data[i + 1];            
         }
+        _size--;
+
+         //shrinking the array to fit if less than 25% of allocated capacity is used
+         if (_size < 0.25*_capacity) 
+        {
+            shrink_to_fit();
+        }
+        return old_value;
     }
 
+    /**
+     * @brief removing last element in the list
+     * 
+     * @return int the last element
+    */
     
     int pop(){
-        remove(_data[_size - 1]);
-        return _data[_size - 1];
-    }
+        
+        int old_value = _data[_size - 1];
+        _size--;
 
+        //shrinking the array to fit if less than 25% of allocated capacity is used
+         if ( _size < 0.25*_capacity) 
+        {
+            shrink_to_fit();
+        }
+        return old_value;
+  
+    }
 };

@@ -117,14 +117,14 @@ void test_remove()
     std::cout << "Testing remove";
     ArrayList a{{10, 12, 13, 13, 24, 42}};
     assert(a.length() == 6);
-    a.remove(12);
+    a.remove(1);
     assert(a.length() == 5);
     assert(a[0] == 10);
     assert(a[1] == 13);
     assert(a[2] == 13);
     assert(a[3] == 24);
     assert(a[4] == 42);
-    a.remove(24);
+    a.remove(3);
     assert(a.length() == 4);
     assert(a[0] == 10);
     assert(a[1] == 13);
@@ -133,15 +133,110 @@ void test_remove()
     std::cout << "- Success!\n";
 }
 
+/***
+ * @brief Test that chosen element pops
+*/
+void test_pop_at_index()
+{
+    std::cout << "Testing pop at index";
+    ArrayList a{{4, 5, 6, 9}};    
+    assert (a.pop(1) == 5);
+    assert(a[0] == 4);
+    assert(a[1] == 6);
+    assert(a[2] == 9);
+    std::cout << "- Success\n";
+}
+
+/***
+ * @brief Test that last element in list pop.
+*/
+
+void test_pop()
+{
+    std::cout << "Testing pop";
+    ArrayList a{{4, 5, 6, 9}};    
+    assert (a.pop() == 9);
+    assert(a[0] == 4);
+    assert(a[1] == 5);
+    assert(a[2] == 6);
+    std::cout << "- Success\n";
+}
+
+void test_capacity()
+{
+    std::cout << "Testing capacity";
+    ArrayList a{};
+    assert(a.capacity() == 1);
+    a.append(3);
+    a.append(4);
+    assert(a.capacity() == 2);
+    a.append(8);
+    a.append(5);
+    a.append(5);
+    assert(a.capacity() == 8);
+    std::cout << "- Success\n";
+
+}
+
+/***
+ * @brief Test shrink_to_fit
+*/
+
+void test_shrink_to_fit_remove()
+{
+    std::cout << "Testing shrink to fit in remove method";
+    ArrayList a{{}};
+
+    for(int i = 0; i < 10; i++)
+    {
+        a.append(i);
+    }
+    a.print();
+    assert(a.capacity() == 16);
+    
+    for (int i = 0; i < 7; i++)
+    {
+        a.remove(i);
+    }
+    a.print();
+    assert(a.capacity() == 4);
+    std::cout << "- Success\n";    
+}
+
+
+void test_shrink_to_fit_pop()
+{
+    std::cout << "Testing shrink to fit in pop method";
+    ArrayList a{{}};
+
+    for(int i = 0; i < 10; i++)
+    {
+        a.append(i);
+    }
+    assert(a.capacity() == 16);
+    
+    for (int i = 0; i < 7; i++)
+    {
+        a.pop(i);
+    }
+
+    assert(a.capacity() == 4);
+    std::cout << "- Success\n";
+}
+
 int main()
 {
-    /*
-    test_empty_array_has_length_zero();
+    
+    /* test_empty_array_has_length_zero();
     test_array_with_two_elements_appended_has_length_two();
     test_print();
     test_vector_constructor();
     test_indexing_operator();
     test_insert();
     test_remove();
-    */
+    test_pop_at_index();
+    test_pop();
+    test_capacity(); */
+    test_shrink_to_fit_remove();
+    test_shrink_to_fit_pop();
 }
