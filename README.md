@@ -4,14 +4,14 @@
 
 - Repo url: https://github.uio.no/IN1910/H22_project2_minashe.git
 
-#Author
+*Author
 - Mina Sheikhi (minashe@mail.uio.no)
 
 
 
 # Part 3: COmparing the ArrayList and the LinkedList
 
-#Exercise 3a) Algorithm analysis
+*Exercise 3a) Algorithm analysis
 
 ArrayList and LinkedList behave similarly from the outside, but they have 
 different performance characteristics.
