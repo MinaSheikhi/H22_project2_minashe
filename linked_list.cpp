@@ -92,22 +92,17 @@ class LinkedList
      */
     void append(int val)
     {
-        Node *new_node = new Node{val};
         _size++;
         if (head == nullptr)
         {
-            head = new_node;
+            head = new Node{val};
+            tail = head;
             return;
+        } else {
+            //next element after tail is a new node with previous node = tail. next node = nullptr. new node has val as value.
+            tail->next = new Node{val, tail, nullptr};
+            tail = tail->next;
         }
-
-        Node *current = head;
-        // Move node until we are at the last element
-        while (current->next != nullptr)
-            current = current->next;
-
-        // next element based on current which now is the element before nullpoint is going 
-        //to be a node with value given with pointer to nullpoint.
-        current->next = new Node{val, current, nullptr};
     }
 
     /**
@@ -181,8 +176,8 @@ class LinkedList
         else
         {
             //find the current node at chosen index
-            Node *current = find_node_at_index(index-1);
-            
+            Node *current = find_node_at_index(index - 1);
+
             // define next to be current nodes next node (same as before)
             Node *next =  current->next;
 

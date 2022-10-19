@@ -36,7 +36,7 @@ class ArrayList
      * @brief replace underlying storage array with smallest
      * capacity 2^n. 
      * Copy all elements of original array over to the new 
-     * arrat and delete old array.
+     * array and delete old array.
     */
 
     void shrink_to_fit()
@@ -173,13 +173,13 @@ class ArrayList
         throw std::range_error("index is out of bounds");
     }
       
-    _size++;
 
     for (int i = _size; i > index; i--){
         _data[i] = _data[i - 1];
     }
 
     _data[index] = val;
+    _size++;
    }
 
     /**
