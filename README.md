@@ -9,7 +9,7 @@
 
 
 
-# Part 3: COmparing the ArrayList and the LinkedList
+# Part 3: Comparing the ArrayList and the LinkedList
 
 ## Exercise 3a) Algorithm analysis
 
@@ -85,8 +85,9 @@ of following operations on each type of list in Big-Oh notation will be:
 
 
 - Print
-    - ArrayList: Total cost is O(n). List has to iterate from the first index to the
-                 last and print out all the elements. Size dependent.
+    - ArrayList: Total cost is O(n). Because of the for loop list has to iterate from the first 
+                 index to the last and print out all the elements. Size dependent.
+                 
     - LinkedList: Total cost is O(n). Also here the list has to iterate from the head
                   through the list and print out each element. Size dependent. 
 
