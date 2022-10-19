@@ -84,7 +84,7 @@ void test_indexing_operator()
  */
 void test_insert()
 {
-    std::cout <<"Testing insert";
+    std::cout <<"Testing insert \n";
     ArrayList a{{0, 1}};
     assert(a.length() == 2);
     a.insert(42, 0);
@@ -115,21 +115,21 @@ void test_insert()
 void test_remove()
 {
     std::cout << "Testing remove";
-    ArrayList a{{10, 12, 13, 13, 24, 42}};
-    assert(a.length() == 6);
-    a.remove(1);
-    assert(a.length() == 5);
-    assert(a[0] == 10);
-    assert(a[1] == 13);
-    assert(a[2] == 13);
-    assert(a[3] == 24);
-    assert(a[4] == 42);
-    a.remove(3);
-    assert(a.length() == 4);
-    assert(a[0] == 10);
-    assert(a[1] == 13);
-    assert(a[2] == 13);
-    assert(a[3] == 42);
+    ArrayList b{{10, 12, 13, 13, 24, 42}};
+    assert(b.length() == 6);
+    b.remove(1);
+    assert(b.length() == 5);
+    assert(b[0] == 10);
+    assert(b[1] == 13);
+    assert(b[2] == 13);
+    assert(b[3] == 24);
+    assert(b[4] == 42);
+    b.remove(3);
+    assert(b.length() == 4);
+    assert(b[0] == 10);
+    assert(b[1] == 13);
+    assert(b[2] == 13);
+    assert(b[3] == 42);
     std::cout << "- Success!\n";
 }
 
