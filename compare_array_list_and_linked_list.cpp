@@ -54,7 +54,7 @@ void run_array_list_insert_front()
         ArrayList a{};
         for (int i = 0; i < N; i++)
         {
-            a.insert(i, 0);
+            a.insert(0, i);
         }
 
         auto stop = high_resolution_clock::now();

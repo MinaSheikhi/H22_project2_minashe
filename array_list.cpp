@@ -190,7 +190,7 @@ class ArrayList
     */
     void remove(int index)
     {        
-        for (int i = 0; i < _size - 1; i++)
+        for (int i = index; i < _size - 1; i++)
         {
            _data[i] = _data[i + 1];
         }

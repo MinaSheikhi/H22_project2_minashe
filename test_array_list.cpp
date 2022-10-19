@@ -229,7 +229,7 @@ int main()
     test_array_with_two_elements_appended_has_length_two();
     test_print();
     test_vector_constructor();
-    test_indexing_operator();
+    test_indexing_operator(); 
     test_insert();
     test_remove();
     test_pop_at_index();
