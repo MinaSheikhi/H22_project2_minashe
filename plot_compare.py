@@ -31,11 +31,22 @@ ax[0, 1].loglog(
 # LinkedList - get
 ax[1, 0].set_title("LinkedList (get)")
 ax[1, 0].loglog(linked_list_get.T[0], linked_list_get.T[1], label="Time")
+ax[1, 0].loglog(
+    array_list_get.T[0],
+    0.005 * np.ones_like(linked_list_get.T[0]),
+    label="O(1)",
+    linestyle="--",
+)
 
 # LinkedList - insert
 ax[1, 1].set_title("LinkedList (insert)")
 ax[1, 1].loglog(linked_list_insert.T[0], linked_list_insert.T[1], label="Time")
-
+ax[1, 1].loglog(
+    linked_list_insert.T[0],
+    0.001 * linked_list_insert.T[0],
+    label="O(n)",
+    linestyle="--",
+)
 for axi in ax.flatten():
     axi.legend()
     axi.grid()
