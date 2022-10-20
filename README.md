@@ -7,6 +7,24 @@
 ## Author
 - Mina Sheikhi (minashe@mail.uio.no)
 
+## Commands to compile and run the files
+I have used the codes from the lectures to do this project. Specialy problem
+1,2 and 3.
+
+array_list (problem 1):
+	c++ test_array_list.cpp -o array_list --std=c++14
+
+
+linked_list (problem 2): 
+	c++ test_linked_list.cpp -o linked_list --std=c++14
+
+compare_array_list_and_linked_list og plot av filene i den (oppgave 3):
+  c++ compare_array_list_and_linked_list.cpp --std=c++14 -o comp
+  py plot_compare.py
+
+linked array list (problem 4): 
+  c++ linked_array_list.cpp -o la -std=c++14
+
 
 
 # Part 3: Comparing the ArrayList and the LinkedList
