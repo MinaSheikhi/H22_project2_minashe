@@ -18,7 +18,7 @@ array_list (problem 1):
 linked_list (problem 2): 
 	c++ test_linked_list.cpp -o linked_list --std=c++14
 
-compare_array_list_and_linked_list og plot av filene i den (oppgave 3):
+compare_array_list_and_linked_list og plot av filene i den (problem 3):
   c++ compare_array_list_and_linked_list.cpp --std=c++14 -o comp
   py plot_compare.py
 
