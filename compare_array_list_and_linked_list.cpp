@@ -27,7 +27,7 @@ void run_array_list_get()
             ll.append(i);
         }
         auto start = high_resolution_clock::now();
-        // Get value in the middle
+        // Get value in the middle. 
         for (int run = 0; run < runs; run++)
         {
             auto value = ll[N / 2];

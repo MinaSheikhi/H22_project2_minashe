@@ -131,12 +131,12 @@ class ArrayList
      */
     void print()
     {
-        std::cout << "ArrayList([";
+        std::cout << "[";
         for (int i = 0; i < _size - 1; i++)
         {
             std::cout << _data[i] << ", ";
         }
-        std::cout << _data[_size - 1] << "])\n";
+        std::cout << _data[_size - 1] << "]\n";
     }
 
     /**

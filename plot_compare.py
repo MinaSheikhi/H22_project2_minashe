@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 array_list_get = np.loadtxt("array_list_get.txt")
 array_list_insert = np.loadtxt("array_list_insert.txt")
 linked_list_get = np.loadtxt("linked_list_get.txt")
