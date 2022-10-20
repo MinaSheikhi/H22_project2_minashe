@@ -91,3 +91,9 @@ of following operations on each type of list in Big-Oh notation will be:
     - LinkedList: Total cost is O(n). Also here the list has to iterate from the head
                   through the list and print out each element. Size dependent. 
 
+## Exercise 3b) Timing your implementation
+
+Write down the expression for the run time in the readme file.
+
+We see that ArrayList(get) has O(1), ArrayList(insert) has O(n), LinkedList(get) has O(n), and 
+LinkedList(insert) has O(1) cost. This seems reasonable.
